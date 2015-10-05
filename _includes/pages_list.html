@@ -16,7 +16,7 @@
 							<ul>
 								{% for subnode in pages_list %}
 									{% if node.subgroup == subnode.group %}
-										{% if page.url == subnode.url | prepend: site.baseurl %}
+										{% if page.url == subnode.url %}
 											<li class="active blue waves-effect waves-blue"><a class='white-text internal-link' href="{{subnode.url | prepend: site.baseurl}}" class="active">{{subnode.title}}</a></li>
 										{% else %}
 											<li class='waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.baseurl}}">{{subnode.title}}</a></li>
