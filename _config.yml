@@ -1,0 +1,12 @@
+# Site settings
+title: material-jekyllize
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+ Fractal. A global cryptocurrency
+baseurl: "/" # the subpath of your site, e.g. /blog/
+url: "http://irontiga.github.io/material-jekyllize" # the base hostname & protocol for your site
+twitter_username: 
+github_username:  irontiga
+
+# Build settings
+markdown: kramdown

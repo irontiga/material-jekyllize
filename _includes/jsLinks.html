@@ -1,0 +1,69 @@
+<!-- page-body div for fast page switching excluding scripts and css-->
+	</div>
+</div>
+
+<!-- jQuery is required by Materialize to function -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="{{ site.url }}/js/materialize.min.js"></script>
+<script type="text/javascript">
+	//custom JS code
+	$(document).ready(function(){
+		$('.collapsible').collapsible({
+			accordion : true
+		});
+		$('.materialboxed').materialbox();
+		$('.button-collapse').sideNav();
+		
+		$("#loader").fadeOut(600).hide();
+	});
+	
+	
+	// Page changing
+	
+	//Function
+	function changePage(href){
+		$('#page-body').fadeOut('slow', function(){
+			$("#loader").show();
+			$('#page-body').load(href + " #page-body-inner", function(){
+				
+				// Re activate plugins
+				$('.collapsible').collapsible({
+					accordion : true
+				});
+				$('.materialboxed').materialbox();
+				$('.button-collapse').sideNav();
+				
+				// Ditch loader and show page
+				$("#loader").hide();
+				$('#page-body').fadeIn('slow');
+			});
+		});
+	}
+	// Link click
+	$(document).on("click", ".internal-link", function(e){
+		if (typeof(window.history.pushState) === typeof(Function)){
+			$("#loader").show();
+			e.preventDefault();
+			var href = $(this).attr("href");
+			history.pushState(null, null, href);
+			//changePage(href);
+			
+			changePage(href)
+			/*
+			$("#page-body").load( href + " #page-body-inner",function(){
+				$("#loader").hide();
+			});*/
+		}
+	});
+	
+	// Browser back button
+	window.onpopstate = function(e){
+		changePage("http://fractalglobal.github.io" + location.pathname)
+	};
+	
+	//Show active collapsible
+	$( ".collapsible-body ul li.active" )
+		.parents( ".collapsible-header" )
+		.addClass( "active");
+	
+</script>

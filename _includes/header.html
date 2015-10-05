@@ -1,0 +1,33 @@
+<div id='loader'>
+	<div class="valign-wrapper">
+		<img class="valign spinning" src="{{ site.url }}/img/icon.png">
+	</div>
+</div>
+
+<div id='page-body'>
+<div id='page-body-inner'>
+
+<header class="site-header">
+	<div class='navbar-fixed'>
+	<nav>
+		<div class="nav-wrapper white">
+			<div class='container'>
+				<a href="{{site.url}}" class="internal-link brand-logo">
+					<img src='{{ site.url }}/img/logo.png'>
+				</a>
+				<a data-activates="mobile-demo" class="button-collapse"><i class="blue-grey-text material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down desktop-navigation">
+					{% assign pages_list = site.pages %}
+					{% assign group = 'nav' %}
+					{% include pages_list.html %}
+				</ul>
+			</div>
+			<ul class="side-nav" id="mobile-demo">
+				{% assign pages_list = site.pages %}
+				{% assign group = 'nav' %}
+				{% include pages_list.html %}
+			</ul>
+		</div>
+	</nav>
+</div>
+</header>
