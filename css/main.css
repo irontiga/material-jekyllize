@@ -8,19 +8,17 @@ html {
 	padding: 0;
 }
 
-nav {
-	ul.desktop-navigation li {
-		&.active, &:hover, &.waves-effect:hover {
-			background: rgba(0, 0, 0, 0);
-		}
-		&.active a {
-			border-bottom: 3px solid #0d47a1;
-		}
-	}
-	a img {
-		max-height: 64px;
-		padding: 12px;
-	}
+nav ul.desktop-navigation li.active, nav ul.desktop-navigation li:hover, nav ul.desktop-navigation li.waves-effect:hover {
+	background: transparent;
+}
+
+nav ul.desktop-navigation li.active a {
+	border-bottom: 3px solid #0d47a1;
+}
+
+nav a img {
+	max-height: 64px;
+	padding: 12px;
 }
 
 /*nav ul.desktop-navigation li:hover a {
@@ -29,34 +27,36 @@ padding:16px 20px 7px 20px;
 line-height:32px;
 margin-bottom: 6px;
 }*/
+.top-div .valign-wrapper {
+	min-height: 350px;
+	height: 100vh;
+}
 
-.top-div {
-	.valign-wrapper {
-		min-height: 350px;
-		height: 100vh;
-	}
-	h1 {
-		padding: 50px 0 50px 0;
-		margin: 0;
-		list-style-type: circle;
-	}
-	ul {
-		padding-top: 60px;
-		margin-left: 0;
-		padding-left: 3em;
-		list-style-position: outside;
-		font-size: 16px;
-	}
-	li {
-		&:before {
-			content: "\2605";
-		}
-		display: inline;
-		padding: 40px 10px 40px 10px;
-	}
-	.download-btn:hover {
-		background: rgba(255, 255, 255, 0.1);
-	}
+.top-div h1 {
+	padding: 50px 0 50px 0;
+	margin: 0;
+	list-style-type: circle;
+}
+
+.top-div ul {
+	padding-top: 60px;
+	margin-left: 0;
+	padding-left: 3em;
+	list-style-position: outside;
+	font-size: 16px;
+}
+
+.top-div li {
+	display: inline;
+	padding: 40px 10px 40px 10px;
+}
+
+.top-div li:before {
+	content: "\2605";
+}
+
+.top-div .download-btn:hover {
+	background: rgba(255, 255, 255, 0.1);
 }
 
 .valign {
@@ -65,13 +65,15 @@ margin-bottom: 6px;
 
 .features-div {
 	padding: 40px 0;
-	.row {
-		padding: 30px 0;
-	}
-	img {
-		padding: 30% 18%;
-		height: auto;
-	}
+}
+
+.features-div .row {
+	padding: 30px 0;
+}
+
+.features-div img {
+	padding: 30% 18%;
+	height: auto;
 }
 
 .fade-ins {
@@ -97,61 +99,53 @@ margin-bottom: 6px;
 	background: white;
 	z-index: 1001;
 	width: 100%;
-	.valign-wrapper {
-		height: 100%;
-	}
-	img.pulsate {
-		height: 100px;
-		width: auto;
-		margin: auto;
-	}
 }
 
+#loader .valign-wrapper {
+	height: 100%;
+}
+
+#loader img.pulsate {
+	height: 100px;
+	width: auto;
+	margin: auto;
+}
 
 @-webkit-keyframes pulsate {
 	0% {
 		-webkit-transform: scale(0.1);
 	}
-
 	50% {
 		-webkit-transform: scale(1);
 	}
-
 	100% {
 		-webkit-transform: scale(0.5);
 	}
 }
 
-
 @keyframes pulsate {
 	0% {
 		transform: scale(0.1);
 	}
-
 	50% {
 		transform: scale(1);
 	}
-
 	100% {
 		transform: scale(0.5);
 	}
 }
 
-
 @-moz-keyframes pulsate {
 	0% {
 		-moz-transform: scale(0.1);
 	}
-
 	50% {
 		-moz-transform: scale(1);
 	}
-
 	100% {
 		-moz-transform: scale(0.5);
 	}
 }
-
 
 .spinning {
 	-webkit-animation: pulsate 2s infinite linear;
@@ -161,7 +155,6 @@ margin-bottom: 6px;
 }
 
 /* Docs menu */
-
 #docs-page {
 	padding-left: 240px;
 }
@@ -191,27 +184,24 @@ a.site-title {
 	margin: 0;
 }
 
-#docs-menu ul li {
-	ul li {
-		width: 100%;
-	}
-	a, ul li a {
-		height: 50px;
-		line-height: 50px;
-	}
+#docs-menu ul li ul li {
+	width: 100%;
+}
+
+#docs-menu ul li a, #docs-menu ul li ul li a {
+	height: 50px;
+	line-height: 50px;
 }
 
 /* indigo ripple */
+.waves-effect.waves-indigo .waves-ripple {
+	/* The alpha value allows the text and background color
+	of the button to still show through. */
+	background-color: rgba(63, 81, 181, 0.75);
+}
 
-.waves-effect.waves-indigo {
-	.waves-ripple {
-		/* The alpha value allows the text and background color
-		of the button to still show through. */
-		background-color: rgba(63, 81, 181, 0.75);
-	}
-	&:hover {
-		/* The alpha value allows the text and background color
-		of the button to still show through. */
-		background-color: rgba(63, 81, 181, 0.35);
-	}
+.waves-effect.waves-indigo:hover {
+	/* The alpha value allows the text and background color
+	of the button to still show through. */
+	background-color: rgba(63, 81, 181, 0.35);
 }
