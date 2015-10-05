@@ -110,6 +110,10 @@ margin-bottom: 6px;
 	width: auto;
 	margin: auto;
 }
+#loader img{
+	width:250px;
+	height:auto;
+}
 
 @-webkit-keyframes pulsate {
 	0% {
