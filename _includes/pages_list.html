@@ -1,6 +1,52 @@
 {% for node in pages_list %}
 	{% if group == node.group %}
-		{% if node.subgroup == null %}
+
+
+		{% if node.layout == 'docs' %}
+			{% if mobile == true %}
+				<li class="no-padding">
+					<ul class="collapsible collapsible-accordion">
+						<li>
+							<a class="collapsible-header waves-effect waves-blue sidebar-dropdown-title">Docs<i class="mdi-navigation-arrow-drop-down"></i></a>
+							<div class="collapsible-body">
+								<ul>
+									{% for docNode in pages_list %}
+									{% if docNode.group == "docs" %}
+									<li class="no-padding">
+										<ul class="collapsible collapsible-accordion">
+											<li>
+												<a class="collapsible-header waves-effect waves-blue sidebar-dropdown-title">{{docNode.title}}<i class="mdi-navigation-arrow-drop-down"></i></a>
+												<div class="collapsible-body">
+													<ul>
+														{% for subnode in pages_list %}
+														{% if docNode.subgroup == subnode.group %}
+														{% if page.url == subnode.url %}
+														<li class="active blue waves-effect waves-blue"><a class='white-text internal-link' href="{{subnode.url | prepend: site.eurl}}" class="active">{{subnode.title}}</a></li>
+														{% else %}
+														<li class='waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.url}}">{{subnode.title}}</a></li>
+														{% endif %}
+														{% endif %}
+														{% endfor %}
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</li>
+									{% endif %}
+									{% endfor %}
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</li>
+			{% else %}
+				{% if page.url == node.url%}
+					<li class="active waves-effect waves-blue"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
+				{% else %}
+					<li class=' waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{node.url | prepend: site.url}}">{{node.title}}</a></li>
+				{% endif %}
+			{% endif %}
+		{% elsif node.subgroup == null %}
 			{% if page.url == node.url%}
 				<li class="active waves-effect waves-blue"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
 			{% else %}
