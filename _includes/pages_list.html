@@ -4,7 +4,7 @@
 			{% if page.url == node.url%}
 				<li class="active waves-effect waves-blue"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
 			{% else %}
-				<li class=' waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a></li>
+				<li class=' waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{node.url | prepend: site.url}}">{{node.title}}</a></li>
 			{% endif %}
 		{%else%}
 			<!-- Dropdown -->
@@ -17,9 +17,9 @@
 								{% for subnode in pages_list %}
 									{% if node.subgroup == subnode.group %}
 										{% if page.url == subnode.url %}
-											<li class="active blue waves-effect waves-blue"><a class='white-text internal-link' href="{{subnode.url | prepend: site.baseurl}}" class="active">{{subnode.title}}</a></li>
+											<li class="active blue waves-effect waves-blue"><a class='white-text internal-link' href="{{subnode.url | prepend: site.eurl}}" class="active">{{subnode.title}}</a></li>
 										{% else %}
-											<li class='waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.baseurl}}">{{subnode.title}}</a></li>
+											<li class='waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.url}}">{{subnode.title}}</a></li>
 										{% endif %}
 									{% endif %}
 								{% endfor %}
