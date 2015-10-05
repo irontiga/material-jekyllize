@@ -151,7 +151,7 @@ margin-bottom: 6px;
 	}
 }
 
-.spinning {
+.pulsate {
 	-webkit-animation: pulsate 2s infinite linear;
 	-moz-animation: pulsate 2s infinite linear;
 	-ms-animation: pulsate 2s infinite linear;
