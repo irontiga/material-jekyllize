@@ -34,7 +34,7 @@ title: Blog
 		{% if page == paginator.page %}
 		<a class="btn-floating btn-large waves-effect waves-light indigo-text white">{{ page }}</a>
 		{% elsif page == 1 %}
-		<a  class="internal-link btn-floating btn-large waves-effect waves-light indigo" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+		<a  class="internal-link btn-floating btn-large waves-effect waves-light indigo" href="{{ site.baseurl }}/blog/">{{ page }}</a>
 		{% else %}
 		<a  class="internal-link btn-floating btn-large waves-effect waves-light indigo" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
 		{% endif %}
