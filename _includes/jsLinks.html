@@ -4,7 +4,7 @@
 
 <!-- jQuery is required by Materialize to function -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="{{ site.url }}/js/materialize.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/materialize.min.js"></script>
 <script type="text/javascript">
 	//custom JS code
 	$(document).ready(function(){
@@ -12,7 +12,7 @@
 			accordion : true
 		});
 		$('.materialboxed').materialbox();
-		$('.button-collapse').sideNav();
+		$('.button-collapse').sideNav({closeOnClick: true});
 		
 		$("#loader").fadeOut(600).hide();
 	});
@@ -31,7 +31,7 @@
 					accordion : true
 				});
 				$('.materialboxed').materialbox();
-				$('.button-collapse').sideNav();
+				$('.button-collapse').sideNav({closeOnClick: true});
 				
 				// Ditch loader and show page
 				$("#loader").hide();
@@ -58,12 +58,7 @@
 	
 	// Browser back button
 	window.onpopstate = function(e){
-		changePage("http://fractalglobal.github.io" + location.pathname)
+		changePage("http://irontiga.com/material-jekyllize/" + location.pathname)
 	};
-	
-	//Show active collapsible
-	$( ".collapsible-body ul li.active" )
-		.parents( ".collapsible-header" )
-		.addClass( "active");
 	
 </script>
