@@ -21,6 +21,25 @@ nav a img {
 	padding: 12px;
 }
 
+ul.side-nav li{
+	width:100%;
+}
+.sidenav li{
+	padding-left:50px !important;
+}
+.side-nav .collapsible-body li.active, .side-nav.fixed .collapsible-body li.active{
+	background-color:white;
+}
+.side-nav .collapsible-body li.active > a, .side-nav.fixed .collapsible-body li.active > a{
+	color:#0d47a1;
+	font-weight:700;
+}
+.side-nav .collapsible-body li a, .side-nav .collapsible-header{
+	margin:0;
+}
+.side-nav li:hover, .side-nav li.active{
+	background:#fff;
+}
 /*nav ul.desktop-navigation li:hover a {
 border-bottom:3px solid rgba(255,255,255,0.5);
 padding:16px 20px 7px 20px;
@@ -207,5 +226,5 @@ a.site-title {
 .waves-effect.waves-indigo:hover {
 	/* The alpha value allows the text and background color
 	of the button to still show through. */
-	background-color: rgba(63, 81, 181, 0.35);
+	background-color: rgba(63, 81, 181, 0.3);
 }

@@ -5,7 +5,7 @@
 				<li class="no-padding">
 					<ul class="collapsible collapsible-accordion">
 						<li>
-							<a class="collapsible-header waves-effect waves-blue sidebar-dropdown-title">Docs<i class="mdi-navigation-arrow-drop-down"></i></a>
+							<a class="blue-grey-text collapsible-header waves-effect waves-indigo sidebar-dropdown-title">Docs<i class="mdi-navigation-arrow-drop-down"></i></a>
 							<div class="collapsible-body">
 								<ul>
 									{% for docNode in pages_list %}
@@ -13,15 +13,15 @@
 									<li class="no-padding">
 										<ul class="collapsible collapsible-accordion">
 											<li>
-												<a class="collapsible-header waves-effect waves-blue sidebar-dropdown-title">{{docNode.title}}<i class="mdi-navigation-arrow-drop-down"></i></a>
+												<a class="collapsible-header waves-effect waves-indigo sidebar-dropdown-title">{{docNode.title}}<i class="mdi-navigation-arrow-drop-down"></i></a>
 												<div class="collapsible-body">
 													<ul>
 														{% for subnode in pages_list %}
 														{% if docNode.subgroup == subnode.group %}
 														{% if page.url == subnode.url %}
-														<li class="active blue waves-effect waves-blue"><a class='white-text internal-link' href="{{subnode.url | prepend: site.baseurl}}" class="active">{{subnode.title}}</a></li>
+														<li class="active waves-effect waves-indigo"><a class='internal-link' href="{{subnode.url | prepend: site.baseurl}}" class="active">{{subnode.title}}</a></li>
 														{% else %}
-														<li class='waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.baseurl}}">{{subnode.title}}</a></li>
+														<li class='waves-effect waves-indigo'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.baseurl}}">{{subnode.title}}</a></li>
 														{% endif %}
 														{% endif %}
 														{% endfor %}
@@ -39,31 +39,31 @@
 				</li>
 			{% else %}
 				{% if page.url == node.url%}
-					<li class="active waves-effect waves-blue"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
+					<li class="active waves-effect waves-indigo"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
 				{% else %}
-					<li class=' waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a></li>
+					<li class='waves-effect waves-indigo'><a class='blue-grey-text internal-link' href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a></li>
 				{% endif %}
 			{% endif %}
 		{% elsif node.subgroup == null %}
 			{% if page.url == node.url%}
-				<li class="active waves-effect waves-blue"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
+				<li class="active waves-effect waves-indigo"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
 			{% else %}
-				<li class=' waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a></li>
+				<li class=' waves-effect waves-indigo'><a class='blue-grey-text internal-link' href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a></li>
 			{% endif %}
 		{%else%}
 			<!-- Dropdown -->
 			<li class="no-padding">
 				<ul class="collapsible collapsible-accordion">
 					<li>
-						<a class="collapsible-header waves-effect waves-blue sidebar-dropdown-title">{{node.title}}<i class="mdi-navigation-arrow-drop-down"></i></a>
+						<a class="collapsible-header waves-effect waves-indigo sidebar-dropdown-title">{{node.title}}<i class="mdi-navigation-arrow-drop-down"></i></a>
 						<div class="collapsible-body">
 							<ul>
 								{% for subnode in pages_list %}
 									{% if node.subgroup == subnode.group %}
 										{% if page.url == subnode.url %}
-											<li class="active blue waves-effect waves-blue"><a class='white-text internal-link' href="{{subnode.url | prepend: site.baseurl}}" class="active">{{subnode.title}}</a></li>
+											<li class="active waves-effect waves-indigo"><a class='internal-link' href="{{subnode.url | prepend: site.baseurl}}" class="active">{{subnode.title}}</a></li>
 										{% else %}
-											<li class='waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.baseurl}}">{{subnode.title}}</a></li>
+											<li class='waves-effect waves-indigo'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.baseurl}}">{{subnode.title}}</a></li>
 										{% endif %}
 									{% endif %}
 								{% endfor %}
