@@ -1,7 +1,7 @@
 ---
 title: Install
 layout: docs
-permalink: /docs/getting-started/install/
+permalink: docs/getting-started/install/
 group: "getting-started"
 ---
 
