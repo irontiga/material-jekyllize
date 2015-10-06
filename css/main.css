@@ -12,8 +12,9 @@ nav ul.desktop-navigation li.active, nav ul.desktop-navigation li:hover, nav ul.
 	background: transparent;
 }
 
-nav ul.desktop-navigation li.active a {
+nav ul.desktop-navigation li.active{
 	border-bottom: 3px solid #0d47a1;
+	height:64px;
 }
 
 nav a img {
