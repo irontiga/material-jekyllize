@@ -1,8 +1,6 @@
 {% for node in pages_list %}
 	{% if group == node.group %}
-
-
-		{% if node.layout == 'docs' %}
+		{% if node.layout == 'docs' and node.group != 'docs' %}
 			{% if mobile == true %}
 				<li class="no-padding">
 					<ul class="collapsible collapsible-accordion">
@@ -21,9 +19,9 @@
 														{% for subnode in pages_list %}
 														{% if docNode.subgroup == subnode.group %}
 														{% if page.url == subnode.url %}
-														<li class="active blue waves-effect waves-blue"><a class='white-text internal-link' href="{{subnode.url | prepend: site.eurl}}" class="active">{{subnode.title}}</a></li>
+														<li class="active blue waves-effect waves-blue"><a class='white-text internal-link' href="{{subnode.url | prepend: site.baseurl}}" class="active">{{subnode.title}}</a></li>
 														{% else %}
-														<li class='waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.url}}">{{subnode.title}}</a></li>
+														<li class='waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.baseurl}}">{{subnode.title}}</a></li>
 														{% endif %}
 														{% endif %}
 														{% endfor %}
@@ -43,14 +41,14 @@
 				{% if page.url == node.url%}
 					<li class="active waves-effect waves-blue"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
 				{% else %}
-					<li class=' waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{node.url | prepend: site.url}}">{{node.title}}</a></li>
+					<li class=' waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a></li>
 				{% endif %}
 			{% endif %}
 		{% elsif node.subgroup == null %}
 			{% if page.url == node.url%}
 				<li class="active waves-effect waves-blue"><a class='blue-grey-text internal-link' href="{{node.url}}" class="active">{{node.title}}</a></li>
 			{% else %}
-				<li class=' waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{node.url | prepend: site.url}}">{{node.title}}</a></li>
+				<li class=' waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a></li>
 			{% endif %}
 		{%else%}
 			<!-- Dropdown -->
@@ -63,9 +61,9 @@
 								{% for subnode in pages_list %}
 									{% if node.subgroup == subnode.group %}
 										{% if page.url == subnode.url %}
-											<li class="active blue waves-effect waves-blue"><a class='white-text internal-link' href="{{subnode.url | prepend: site.eurl}}" class="active">{{subnode.title}}</a></li>
+											<li class="active blue waves-effect waves-blue"><a class='white-text internal-link' href="{{subnode.url | prepend: site.baseurl}}" class="active">{{subnode.title}}</a></li>
 										{% else %}
-											<li class='waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.url}}">{{subnode.title}}</a></li>
+											<li class='waves-effect waves-blue'><a class='blue-grey-text internal-link' href="{{subnode.url | prepend: site.baseurl}}">{{subnode.title}}</a></li>
 										{% endif %}
 									{% endif %}
 								{% endfor %}

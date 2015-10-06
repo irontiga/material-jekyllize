@@ -3,8 +3,8 @@ title: material-jekyllize
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
  Fractal. A global cryptocurrency
-baseurl: "/" # the subpath of your site, e.g. /blog/
-url: "http://irontiga.com/material-jekyllize" # the base hostname & protocol for your site
+ baseurl: "/material-jekyllize/" # the subpath of your site, e.g. /blog/
+url: "http://irontiga.com" # the base hostname & protocol for your site
 twitter_username: 
 github_username:  irontiga
 
