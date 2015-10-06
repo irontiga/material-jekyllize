@@ -1,0 +1,21 @@
+{{site.nav-groups}}
+<br><br>
+
+{% for group in site.nav-groups %}
+	{% for page in site.pages %}
+		{% if page.group == group.group %}
+			<!-- Page which is in the picked group -->
+			{%  %}
+			{{page.title}}
+			<!-- -->
+		{% endif %}
+	{% endfor %}
+<!-- Subgroup
+	{% if group.subgroups != null %}
+		{% for page in site.pages %}
+			{% if page.group == group.group %}
+				{{page.title}}
+			{% endif %}
+		{% endfor %}
+	{% endif %}-->
+{% endfor %}

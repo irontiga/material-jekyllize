@@ -1,0 +1,10 @@
+{{ site.nav-groups }}
+
+{% for page in site.pages %}
+	{{page.group}}
+{% endfor %}
+
+
+{% for group in site.nav-groups %}
+	{% include nav-mobile.html group=group %}
+{% endfor %}

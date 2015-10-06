@@ -1,0 +1,13 @@
+{% for page in site.pages %}
+	{% if page.group == include.group.group %}
+		<b>{{page.title}}</b>
+	{% endif %}
+{% endfor %}
+
+{% if include.group.subgroups %}
+	{% for subgroup in include.group.subgroups %}
+		{{ subgroup.title }}
+		{% capture group %}{{subgroup}}{% endcapture %}
+		{% include nav-mobile.html group=group %}
+	{% endfor %}
+{% endif %}

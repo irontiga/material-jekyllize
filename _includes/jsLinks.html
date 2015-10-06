@@ -14,7 +14,7 @@
 		$('.materialboxed').materialbox();
 		$('.button-collapse').sideNav({closeOnClick: true});
 		
-		$("#loader").fadeOut(600).hide();
+		$("#preloader").fadeOut(600).hide();
 	});
 	
 	
@@ -22,21 +22,18 @@
 	
 	//Function
 	function changePage(href){
-		$('#page-body').fadeOut('slow', function(){
-			$("#loader").show();
-			$('#page-body').load(href + " #page-body-inner", function(){
-				
-				// Re activate plugins
-				$('.collapsible').collapsible({
-					accordion : true
-				});
-				$('.materialboxed').materialbox();
-				$('.button-collapse').sideNav({closeOnClick: true});
-				
-				// Ditch loader and show page
-				$("#loader").hide();
-				$('#page-body').fadeIn('slow');
+		$("#preloader").show();
+		$('#page-body').load(href + " #page-body-inner", function(){
+
+			// Re activate plugins
+			$('.collapsible').collapsible({
+				accordion : true
 			});
+			$('.materialboxed').materialbox();
+			$('.button-collapse').sideNav({closeOnClick: true});
+
+			// Ditch loader and show page
+			$("#loader").hide();
 		});
 	}
 	// Link click

@@ -1,7 +1,15 @@
 html {
 	overflow-x: hidden;
 }
-
+#preloader{
+	position: fixed;
+	z-index:100;
+	width:100%;
+	margin:0;
+}
+#preloader .progress{
+	margin:0;
+}
 .page-contents {
 	height: auto;
 	margin: 0;

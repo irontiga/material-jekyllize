@@ -15,3 +15,14 @@ paginate: 2
 paginate_path: "/blog/page/:num"
 
 permalink: "/blog/:year/:month/:day/:title/"
+
+nav-groups:
+ - group: "nav"
+   subgroups:
+    - group: "docs"
+      title: "Documentaion"
+      subgroups:
+       - group: "getting-started"
+         title: "Getting started"
+       - group: "api"
+         title: "API"
