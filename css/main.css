@@ -124,28 +124,6 @@ margin-bottom: 6px;
 	padding: 25px 0;
 }
 
-#loader {
-	height: 100vh;
-	position: fixed;
-	background: white;
-	z-index: 1001;
-	width: 100%;
-}
-
-#loader .valign-wrapper {
-	height: 100%;
-}
-
-#loader img.pulsate {
-	height: 100px;
-	width: auto;
-	margin: auto;
-}
-#loader img{
-	width:250px;
-	height:auto;
-}
-
 @-webkit-keyframes pulsate {
 	0% {
 		-webkit-transform: scale(0.1);

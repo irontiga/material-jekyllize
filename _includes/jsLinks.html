@@ -33,13 +33,13 @@
 			$('.button-collapse').sideNav({closeOnClick: true});
 
 			// Ditch loader and show page
-			$("#loader").hide();
+			$("#preloader").hide();
 		});
 	}
 	// Link click
 	$(document).on("click", ".internal-link", function(e){
 		if (typeof(window.history.pushState) === typeof(Function)){
-			$("#loader").show();
+			$("#preloader").show();
 			e.preventDefault();
 			var href = $(this).attr("href");
 			history.pushState(null, null, href);
