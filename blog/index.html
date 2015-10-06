@@ -15,7 +15,7 @@ title: Blog
 			{{ post.content | strip_html | truncatewords: 50 }}
 		</div>
 		<div class="card-action">
-			<a class="right indigo-text" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+			<a class="internal-link right indigo-text" href="{{ post.url | prepend: site.baseurl }}">Read more</a>
 		</div>
 	</div>
 	
@@ -25,7 +25,7 @@ title: Blog
 	{% if paginator.total_pages > 1 %}
 	<div class="center">
 		{% if paginator.previous_page %}
-		<a class="btn-floating btn-large waves-effect waves-light indigo" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a>
+		<a class="internal-link btn-floating btn-large waves-effect waves-light indigo" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a>
 		{% else %}
 		<a class="disabled btn-floating btn-large waves-effect waves-light indigo">&laquo;</a>
 		{% endif %}
@@ -34,14 +34,14 @@ title: Blog
 		{% if page == paginator.page %}
 		<a class="btn-floating btn-large waves-effect waves-light indigo-text white">{{ page }}</a>
 		{% elsif page == 1 %}
-		<a  class="btn-floating btn-large waves-effect waves-light indigo" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+		<a  class="internal-link btn-floating btn-large waves-effect waves-light indigo" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
 		{% else %}
-		<a  class="btn-floating btn-large waves-effect waves-light indigo" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+		<a  class="internal-link btn-floating btn-large waves-effect waves-light indigo" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
 		{% endif %}
 		{% endfor %}
 
 		{% if paginator.next_page %}
-		<a class="btn-floating btn-large waves-effect waves-light indigo" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>
+		<a class="internal-link btn-floating btn-large waves-effect waves-light indigo" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>
 		{% else %}
 		<a class="disabled btn-floating btn-large waves-effect waves-light indigo">&raquo;</a>
 		{% endif %}
