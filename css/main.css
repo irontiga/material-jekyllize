@@ -7,6 +7,9 @@ html {
 	margin: 0;
 	padding: 0;
 }
+blockquote{
+	border-color:#0d47a1;
+}
 
 nav ul.desktop-navigation li.active, nav ul.desktop-navigation li:hover, nav ul.desktop-navigation li.waves-effect:hover {
 	background: transparent;
