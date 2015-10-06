@@ -76,7 +76,11 @@
 	{% endif %}
 {% endfor %}
 
-<li class=' waves-effect waves-indigo'><a class='blue-grey-text internal-link' href="{{'/blog/' | prepend: site.baseurl}}">Blog</a></li>
+{% if page.url contains "/blog/" %}
+	<li class='active waves-effect waves-indigo'><a class='blue-grey-text internal-link' href="{{'/blog/' | prepend: site.baseurl}}">Blog</a></li>
+{% else %}
+	<li class='waves-effect waves-indigo'><a class='blue-grey-text internal-link' href="{{'/blog/' | prepend: site.baseurl}}">Blog</a></li>
+{% endif %}
 
 {% assign pages_list = nil %}
 

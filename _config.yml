@@ -13,3 +13,5 @@ markdown: kramdown
 
 paginate: 2
 paginate_path: "/blog/page/:num"
+
+permalink: "/blog/:year/:month/:day/:title/"
