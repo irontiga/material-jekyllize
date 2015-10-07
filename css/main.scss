@@ -2,11 +2,41 @@
 #Main css file
 ---
 
+@import "materialize";
 @import "syntax-highlighting";
 
+/* Color scheme */
+$primary : $indigo;
+$accent: $pink;
 
 html {
 	overflow-x: hidden;
+}
+
+$custom_colors: (
+	"primary" : $primary,
+	"accent" : $accent
+);
+
+@each $color_name, $color in $custom_colors {
+	@each $color_type, $color_value in $color {
+		@if $color_type == "base" {
+			.#{$color_name} {
+				background-color: $color_value !important;
+			}
+			.#{$color_name}-text {
+				color: $color_value !important;
+			}
+	}
+	@else {
+		.#{$color_name}.#{$color_type} {
+			background-color: $color_value !important;
+		}
+		.#{$color_name}-text.text-#{$color_type} {
+			color: $color_value !important;
+		}
+}
+}
 }
 
 #preloader {
@@ -26,7 +56,7 @@ html {
 }
 
 blockquote {
-	border-color: #0d47a1;
+	border-color: map-get($accent,base);
 }
 
 nav {
@@ -61,16 +91,18 @@ ul.side-nav li {
 	.collapsible-body li.active, &.fixed .collapsible-body li.active {
 		background-color: white;
 	}
-	.collapsible-body li.active > a, &.fixed .collapsible-body li.active > a {
-		color: #0d47a1;
+	.collapsible > li > a{
 		font-weight: 700;
+	}
+	&.fixed .collapsible-body li.active > a{
+		color: map-get($primary,base) !important;
 	}
 	.collapsible-body li a, .collapsible-header {
 		margin: 0;
 	}
 	li {
 		&:hover, &.active {
-			background: #fff;
+			background: transparent;
 		}
 	}
 }
@@ -246,15 +278,8 @@ a.site-title {
 
 /* indigo ripple */
 
-.waves-effect.waves-indigo {
+.waves-effect{
 	.waves-ripple {
-		/* The alpha value allows the text and background color
-		of the button to still show through. */
-		background-color: rgba(63, 81, 181, 0.75);
-	}
-	&:hover {
-		/* The alpha value allows the text and background color
-		of the button to still show through. */
-		background-color: rgba(63, 81, 181, 0.3);
+		background-color: rgba(map-get($accent,base), 0.65);
 	}
 }
