@@ -2,7 +2,7 @@
 	{% for node in site.pages %}
 		{% if node.group == include.group.group %}
 			<li class="waves-effect {% if node.url == page.url %}active{% endif %}">
-				<a class="blue-grey-text" href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+				<a class="internal-link" href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
 			</li>
 		{% endif %}
 	{% endfor %}
@@ -13,7 +13,7 @@
 			<li class="no-padding">
 				<ul class="collapsible collapsible-accordion">
 					<li>
-						<a class="waves-effect blue-grey-text collapsible-header {% if page.url contains subgroup.url %}{{'active'}}{% endif %}">{{subgroup.title}}<i class="mdi-navigation-arrow-drop-down"></i></a>
+						<a class="waves-effect collapsible-header {% if page.url contains subgroup.url %}{{'active'}}{% endif %}">{{subgroup.title}}<i class="mdi-navigation-arrow-drop-down"></i></a>
 						<div class="collapsible-body">
 							<ul>
 								{% include nav-mobile.html group = subgroup %}

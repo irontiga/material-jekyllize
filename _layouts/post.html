@@ -4,12 +4,12 @@ layout: default
 <div class="container">
 
   <header class="post-header">
-    <h3 class="post-title thin blue-grey-text">{{ page.title }}</h3>
-    <i class="post-meta blue-grey-text">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</i>
+	  <h3 class="post-title thin dark-text">{{ page.title }}</h3>
+	  <i class="post-meta dark-text">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</i>
   </header>
 
-  <article class="post-content blue-grey-text">
-    {{ content }}
-  </article>
+	<article class="post-content dark-text">
+    	{{ content }}
+	</article>
 
 </div>

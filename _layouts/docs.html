@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 	{% include head.html %}
-	<body>
-		<div id='docs-page'>
-			{% include header.html %}
-			<ul id="docs-menu" class="side-nav fixed" style="top:64px;">
-				<li><a><b>Documentation</b></a></li>
-				{% assign navType = 'docs' %}
-				{% include nav.html %}
-			</ul>
-			<div id='docs-content'>
-				{{ content }}
-			</div>
-			{% include footer.html %}
-		{% include jsLinks.html %}
+	<body class='docs-page'>
+		{% include header.html %}
+		<ul id="docs-menu" class="side-nav fixed" style="top:64px;">
+			<li><a><b>Documentation</b></a></li>
+			{% assign navType = 'docs' %}
+			{% include nav.html %}
+		</ul>
+		<div id='docs-content'>
+			{{ content }}
 		</div>
+		{% include footer.html %}
+	{% include jsLinks.html %}
 	</body>
 </html>

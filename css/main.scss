@@ -8,9 +8,12 @@
 /* Color scheme */
 $primary : $indigo;
 $accent: $pink;
+$dark-text: map-get($blue-grey, darken-2);
+$light-text: "#FFF";
 
 html {
 	overflow-x: hidden;
+	color: $dark-text;
 }
 
 $custom_colors: (
@@ -38,7 +41,12 @@ $custom_colors: (
 }
 }
 }
-
+.dark-text{
+	color:$dark-text !important;
+}
+.light-text{
+	color:$light-text !important;
+}
 #preloader {
 	position: fixed;
 	z-index: 1000;
@@ -69,6 +77,9 @@ nav {
 			height: 64px;
 		}
 	}
+	ul.desktop-navigation li a{
+		color: $dark-text;
+	}
 	a {
 		img {
 			max-height: 64px;
@@ -95,7 +106,8 @@ ul.side-nav li {
 		font-weight: 700;
 	}
 	&.fixed .collapsible-body li.active > a{
-		color: map-get($primary,base) !important;
+		background-color: map-get($primary,base) !important;
+		color: $light-text !important;
 	}
 	.collapsible-body li a, .collapsible-header {
 		margin: 0;
@@ -229,22 +241,22 @@ margin-bottom: 6px;
 
 /* Docs menu */
 
-#docs-page {
-	footer {
+.docs-page{
+	footer{
 		padding-left: 240px;
 	}
-	#docs-content {
+	#docs-content{
 		padding: 10px;
 		padding-left: 250px;
 	}
 }
 
 @media only screen and (max-width: 992px) {
-	#docs-page {
-		footer {
+	.docs-page {
+		footer{
 			padding-left: 0px;
 		}
-		#docs-content {
+		#docs-content{
 			padding: 5px;
 			padding-left: 5px;
 		}
