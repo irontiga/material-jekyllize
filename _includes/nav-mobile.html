@@ -13,7 +13,7 @@
 			<li class="no-padding">
 				<ul class="collapsible collapsible-accordion">
 					<li>
-						<a class="blue-grey-text collapsible-header">{{subgroup.title}}<i class="mdi-navigation-arrow-drop-down"></i></a>
+						<a class="blue-grey-text collapsible-header {% if page.url contains subgroup.url %}{{'active'}}{% endif %}">{{subgroup.title}}<i class="mdi-navigation-arrow-drop-down"></i></a>
 						<div class="collapsible-body">
 							<ul>
 								{% include nav-mobile.html group = subgroup %}
