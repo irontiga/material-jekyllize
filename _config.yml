@@ -16,13 +16,21 @@ paginate_path: "/blog/page/:num"
 
 permalink: "/blog/:year/:month/:day/:title/"
 
+
+docs: &docs 
+  group: "docs"
+  title: "Docs"
+  url: "/docs/"
+  subgroups:
+   - group: "getting-started"
+     title: "Getting started"
+     url: "/getting-started/"
+   - group: "api"
+     title: "API"
+     url: "/api/"
+
+
 nav-groups:
  - group: "nav"
    subgroups:
-    - group: "docs"
-      title: "Documentaion"
-      subgroups:
-       - group: "getting-started"
-         title: "Getting started"
-       - group: "api"
-         title: "API"
+    - *docs

@@ -17,16 +17,13 @@
 							</a>
 							<a data-activates="mobile-demo" class="button-collapse"><i class="blue-grey-text material-icons">menu</i></a>
 							<ul class="right hide-on-med-and-down desktop-navigation">
-								{% assign pages_list = site.pages %}
-								{% assign group = 'nav' %}
-								{% include pages_list.html %}
+								{% assign navType = 'desktop' %}
+								{% include nav.html %}
 							</ul>
 						</div>
 						<ul class="side-nav" id="mobile-demo">
-							{% assign pages_list = site.pages %}
-							{% assign group = 'nav' %}
-							{% assign mobile = true %}
-							{% include pages_list.html %}
+							{% assign navType = 'mobile' %}
+							{% include nav.html %}
 						</ul>
 					</div>
 				</nav>

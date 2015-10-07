@@ -2,21 +2,18 @@
 <html>
 	{% include head.html %}
 	<body>
-
-		{% include header.html %}
 		<div id='docs-page'>
+			{% include header.html %}
 			<ul id="docs-menu" class="side-nav fixed" style="top:64px;">
-				<li><a><small><b>Documentation</b></small></a></li>
-				{% assign pages_list = site.pages %}
-				{% assign group = 'docs' %}
-				{% include pages_list.html %}
+				<li><a><b>Documentation</b></a></li>
+				{% assign navType = 'docs' %}
+				{% include nav.html %}
 			</ul>
 			<div id='docs-content'>
 				{{ content }}
 			</div>
 			{% include footer.html %}
-		</div>
 		{% include jsLinks.html %}
+		</div>
 	</body>
-
 </html>
