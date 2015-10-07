@@ -5,6 +5,6 @@ permalink: /about/
 group: "nav"
 ---
 
-Material-jekyllize | About
+##About
 
-#IT'S AWESOME
+Jekyllize is a Jekyll theme utilizing materialize css. It has an extensize API, as covered in the docs sections. It's goal is to provide an alternative to wordpress (different layouts etc.), and a platform for developers, as it provides a simple system for creating documentation.
