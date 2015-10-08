@@ -11,7 +11,9 @@ title: Blog
 			<span class="card-title dark-text">{{ post.title }}</span>
 			<br>
 			<i>{{ post.date | date: "%b %d, %Y" }}</i>
-			<hr>
+		</div>
+		<div class="divider"></div>
+		<div class="card-content dark-text">
 			{{ post.content | strip_html | truncatewords: 50 }}
 		</div>
 		<div class="card-action">

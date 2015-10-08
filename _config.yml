@@ -22,7 +22,7 @@ permalink: "/blog/:year/:month/:day/:title/"
 docs: &docs 
   group: "docs"
   title: "Docs"
-  url: "/docs/"
+  url: "/docs/getting-started/install/"
   subgroups:
    - group: "getting-started"
      title: "Getting started"

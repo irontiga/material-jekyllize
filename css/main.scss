@@ -89,32 +89,40 @@ nav {
 		max-width: 70%;
 	}
 }
-
-ul.side-nav li {
-	width: 100%;
-}
-
-.sidenav li {
-	padding-left: 50px !important;
-}
-
-.side-nav {
-	.collapsible-body li.active, &.fixed .collapsible-body li.active {
-		background-color: white;
+.side-nav, .side-nav.fixed{
+	.collapsible-header{
+		max-width:100%;
+		margin:0;
+		&.active{
+			background-color: #fff;
+		}
 	}
-	.collapsible > li > a{
-		font-weight: 700;
+	.collapsible-body{
+		li{
+			a{
+				margin:0;
+				max-width:100%;
+			}
+			&.active{
+				color:#fff;
+				background-color: map-get($primary,base);
+				a{
+					color:$light-text;
+				}
+			}
+		}
 	}
-	&.fixed .collapsible-body li.active > a{
-		background-color: map-get($primary,base) !important;
-		color: $light-text !important;
-	}
-	.collapsible-body li a, .collapsible-header {
-		margin: 0;
-	}
-	li {
-		&:hover, &.active {
-			background: transparent;
+	li{
+		width:100%;
+		&:hover{
+			background-color: inherit;
+		}
+		&.active{
+			color:#fff;
+			background-color: map-get($primary,base);
+		}
+		a{
+			margin:0;
 		}
 	}
 }
