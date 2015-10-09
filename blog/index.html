@@ -14,7 +14,7 @@ title: Blog
 		</div>
 		<div class="divider"></div>
 		<div class="card-content dark-text">
-			{{ post.content | strip_html | truncatewords: 50 }}
+			{{ post.excerpt }}
 		</div>
 		<div class="card-action">
 			<a class="internal-link right primary-text" href="{{ post.url | prepend: site.baseurl }}">Read more</a>

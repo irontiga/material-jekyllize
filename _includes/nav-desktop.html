@@ -1,17 +1,15 @@
-
-	{% for node in site.pages %}
-		{% if node.group == include.group.group %}
-			<li class="{% if page.url contains node.url %}{{'active'}}{% endif %}">
-				<a class="internal-link" href="{{ node.url | prepend: site.baseurl}}">{{ node.title }}</a>
-			</li>
-		{% endif %}
-	{% endfor %}
-
-
-	{% if include.group.subgroups %}
-		{% for subgroup in include.group.subgroups %}
-			<li class="{% if page.url contains subgroup.url %}{{'active'}}{% endif %}">
-				<a class="internal-link" href="{{ subgroup.url | prepend: site.baseurl}}">{{subgroup.title}}</a>
-			</li>
-		{% endfor %}
+{% for node in site.pages %}
+	{% if node.group == include.group.group %}
+		<li class="{% if page.url contains node.url %} active {% endif %}">
+			<a class="internal-link" href="{{ node.url | prepend: site.baseurl}}">{{ node.title }}</a>
+		</li>
 	{% endif %}
+{% endfor %}
+
+{% if include.group.subgroups %}
+	{% for subgroup in include.group.subgroups %}
+		<li class="{% if page.url contains subgroup.group %} active {% endif %}">
+			<a class="internal-link" href="{{ subgroup.url | prepend: site.baseurl}}">{{subgroup.title}}</a>
+		</li>
+	{% endfor %}
+{% endif %}

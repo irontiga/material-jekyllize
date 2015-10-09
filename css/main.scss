@@ -6,10 +6,10 @@
 @import "syntax-highlighting";
 
 /* Color scheme */
-$primary : $indigo;
-$accent: $pink;
+$primary : $brown;
+$accent: $deep-orange;
 $dark-text: map-get($blue-grey, darken-2);
-$light-text: "#FFF";
+$light-text: #FFF;
 
 html {
 	overflow-x: hidden;
@@ -47,6 +47,27 @@ $custom_colors: (
 .light-text{
 	color:$light-text !important;
 }
+code{
+	background-color: rgba(0,0,0,0.05);
+	border-radius:1px;
+	display:inline-block;
+	margin:0;
+	padding:4px 8px;
+}
+pre{
+	margin:0;
+	width:100%;
+	code{
+		width:100%;
+	}
+}
+a{
+	color:map-get($accent, base);
+	text-decoration: bold;
+	&:hover{
+		color:map-get($accent, lighten-2);
+	}
+}
 #preloader {
 	position: fixed;
 	z-index: 1000;
@@ -73,7 +94,7 @@ nav {
 			background: transparent;
 		}
 		&.active {
-			border-bottom: 3px solid #0d47a1;
+			border-bottom: 3px solid map-get($primary,base);
 			height: 64px;
 		}
 	}
@@ -91,37 +112,50 @@ nav {
 }
 .side-nav, .side-nav.fixed{
 	.collapsible-header{
+		font-weight:bold;
 		max-width:100%;
 		margin:0;
 		&.active{
 			background-color: #fff;
+			color:$dark-text !important;
 		}
+		color:$dark-text;
 	}
 	.collapsible-body{
+		margin:0;
 		li{
 			a{
 				margin:0;
 				max-width:100%;
+				color:$dark-text;
 			}
 			&.active{
-				color:#fff;
 				background-color: map-get($primary,base);
 				a{
+					color:$dark-text;
+				}
+				> a{
 					color:$light-text;
 				}
 			}
 		}
 	}
 	li{
+		line-height:50px;
+		margin:0;
 		width:100%;
 		&:hover{
 			background-color: inherit;
 		}
 		&.active{
-			color:#fff;
 			background-color: map-get($primary,base);
+			> a{
+				color:$light-text;
+			}
 		}
 		a{
+			line-height:50px;
+			height:50px;
 			margin:0;
 		}
 	}
@@ -249,51 +283,27 @@ margin-bottom: 6px;
 
 /* Docs menu */
 
-.docs-page{
-	footer{
-		padding-left: 240px;
-	}
-	#docs-content{
-		padding: 10px;
-		padding-left: 250px;
-	}
+footer.docs-footer{
+	padding-left: 240px;
+}
+#docs-content{
+	padding: 10px;
+	padding-left: 250px;
 }
 
 @media only screen and (max-width: 992px) {
-	.docs-page {
-		footer{
-			padding-left: 0px;
-		}
-		#docs-content{
-			padding: 5px;
-			padding-left: 5px;
-		}
+	footer.docs-footer{
+		padding-left: 240px;
 	}
-}
-
-#docs-menu {
-	z-index: 2;
-	/*padding-top:60px*/
+	#docs-content{
+		padding: 5px;
+		padding-left: 5px;
+	}
 }
 
 a.site-title {
 	font-size: 24px;
 	padding-left: 6px;
-}
-
-.side-nav.fixed a.sidebar-dropdown-title {
-	padding: 15px;
-	margin: 0;
-}
-
-#docs-menu ul li {
-	ul li {
-		width: 100%;
-	}
-	a, ul li a {
-		height: 50px;
-		line-height: 50px;
-	}
 }
 
 /* indigo ripple */

@@ -11,9 +11,11 @@
 	{% if include.group.subgroups %}
 		{% for subgroup in include.group.subgroups %}
 			<li class="no-padding">
-				<ul class="collapsible collapsible-accordion">
+				<ul class="collapsible" data-collapsible="accordion">
 					<li>
-						<a class="waves-effect collapsible-header {% if page.url contains subgroup.url %} active {% endif %}">{{subgroup.title}}<i class="mdi-navigation-arrow-drop-down"></i></a>
+						<div class="collapsible-header waves-effect {% if page.url contains subgroup.group %} active {% endif %}">
+							{{subgroup.title}}<i class="mdi-navigation-arrow-drop-down"></i>
+						</div>
 						<div class="collapsible-body">
 							<ul>
 								{% include nav-mobile.html group = subgroup %}

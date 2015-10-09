@@ -4,12 +4,15 @@
 		{% include nav-mobile.html group = group %}
 	{% endfor %}
 
+
 {% elsif navType == 'desktop' %}
 	<!-- Desktop -->
 	{% for group in site.nav-groups %}
 		{% include nav-desktop.html group = group %}
 	{% endfor %}
 
+
 {% elsif navType == 'docs' %}
+	<!-- docs page -->
 	{% include nav-mobile.html group = site.docs %}
 {% endif %}

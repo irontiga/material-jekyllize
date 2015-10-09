@@ -1,5 +1,5 @@
 # Site settings
-title: material-jekyllize
+title: Jekyllize
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
  A materialize theme for jekyll
@@ -26,10 +26,8 @@ docs: &docs
   subgroups:
    - group: "getting-started"
      title: "Getting started"
-     url: "/getting-started/"
    - group: "api"
      title: "API"
-     url: "/api/"
 
 
 nav-groups:
