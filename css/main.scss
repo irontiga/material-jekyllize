@@ -202,7 +202,7 @@ nav {
 /* Docs page sidebar */
 .side-nav.fixed{
 	padding-top:12px;
-	background: map-get($accent,lighten-5);
+	background: map-get($primary,lighten-5);
 	
 	/* remove the ripple */
 	.waves-effect .waves-ripple{
@@ -215,9 +215,9 @@ nav {
 		font-weight: 500;
 		&.active{
 			background-color: transparent;
-			color: map-get($accent,darken-2) !important;
+			color: map-get($primary,darken-2) !important;
 		}
-		color: map-get($accent,lighten-1)
+		color: map-get($primary,lighten-1)
 	}
 	.collapsible-body{
 		padding-left:15px;
@@ -228,15 +228,15 @@ nav {
 			background-color: transparent;
 			a{
 				line-height:30px;
-				color: map-get($accent,lighten-2);
+				color: map-get($primary,lighten-2);
 			}
 			&.active, &:hover{
 				background-color: transparent;
 				a{
-					color: map-get($accent,darken-2);
+					color: map-get($primary,darken-2);
 				}
 				> a{
-					color: map-get($accent,darken-2);
+					color: map-get($primary,darken-2);
 				}
 			}
 		}
@@ -250,7 +250,7 @@ nav {
 		&.active{
 			background-color: transparent;
 			> a{
-				color: map-get($accent,lighten-2);
+				color: map-get($primary,lighten-2);
 			}
 		}
 	}
