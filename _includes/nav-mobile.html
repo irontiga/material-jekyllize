@@ -9,9 +9,9 @@
 	
 	
 	{% if include.group.subgroups %}
-		{% for subgroup in include.group.subgroups %}
-			<li class="no-padding">
-				<ul class="collapsible" data-collapsible="accordion">
+		<li class="no-padding">
+			<ul class="collapsible" data-collapsible="accordion">
+				{% for subgroup in include.group.subgroups %}
 					<li>
 						<div class="collapsible-header waves-effect {% if page.url contains subgroup.group %} active {% endif %}">
 							{{subgroup.title}}
@@ -25,7 +25,7 @@
 							</ul>
 						</div>
 					</li>
-				</ul>
-			</li>
-		{% endfor %}
+				{% endfor %}
+			</ul>
+		</li>
 	{% endif %}
