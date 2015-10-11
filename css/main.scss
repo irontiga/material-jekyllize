@@ -3,26 +3,27 @@
 ---
 
 @import "materialize";
+@import "jekyllizeMixins";
 @import "syntax-highlighting";
 
 /* Color scheme */
 $primary	: $brown;
 $accent		: $yellow;
+/* New variables to reduce map-get calls, don't touch this unless you want to change the base shade */
+$primary-base	:map-get($primary, base);
+$accent-base	:map-get($accent, base);
 
 /* Advanced colors */
 $dark-text	: #444;
 $light-text	: #FFF;
 $linkColor	: map-get($accent, darken-1);
+$navColors: (
+	"background"	: $primary-base,
+	"underline"		: $accent-base,
+	"li-color"		: $light-text
+);
 
-/* New variables to reduce map-get calls, don't touch this unless you want to change the base shade */
-$primary-base	:map-get($primary, base);
-$accent-base	:map-get($accent, base);
-
-html {
-	overflow-x: hidden;
-	color: $dark-text;
-}
-
+/* Create all the classes for primary and accent just like $blue or $yellow */
 $custom_colors: (
 	"primary" : $primary,
 	"accent" : $accent
@@ -37,22 +38,27 @@ $custom_colors: (
 			.#{$color_name}-text {
 				color: $color_value !important;
 			}
+		}
+		@else {
+			.#{$color_name}.#{$color_type} {
+				background-color: $color_value !important;
+			}
+			.#{$color_name}-text.text-#{$color_type} {
+				color: $color_value !important;
+			}
+		}
 	}
-	@else {
-		.#{$color_name}.#{$color_type} {
-			background-color: $color_value !important;
-		}
-		.#{$color_name}-text.text-#{$color_type} {
-			color: $color_value !important;
-		}
-}
-}
 }
 .dark-text{
 	color:$dark-text !important;
 }
 .light-text{
 	color:$light-text !important;
+}
+/* Customize standard html */
+html {
+	overflow-x: hidden;
+	color: $dark-text;
 }
 code{
 	background-color: rgba(0,0,0,0.05);
@@ -75,6 +81,14 @@ a{
 		color:lighten($linkColor,15%);
 	}
 }
+nav{
+	background-color: map-get($navColors,background);
+}
+blockquote {
+	border-color: $accent-base;
+}
+
+/* Default colors of materialize classes */
 .btn{
 	background-color: $primary-base;
 }
@@ -82,9 +96,13 @@ a{
 	color:$light-text;
 	background-color: map-get($primary,lighten-1);
 }
-nav{
-	background-color: $primary-base;
+.waves-effect{
+	.waves-ripple {
+		background-color: rgba($accent-base, 0.70);
+	}
 }
+
+/* Preloader positioning */
 #preloader {
 	position: fixed;
 	z-index: 1000;
@@ -101,22 +119,19 @@ nav{
 	padding: 0;
 }
 
-blockquote {
-	border-color: $accent-base;
-}
-
+/* Colors and styling for navbar */
 nav {
 	ul.desktop-navigation li {
 		&.active, &:hover, &.waves-effect:hover {
 			background: transparent;
 		}
 		&.active {
-			border-bottom: 3px solid $accent-base;
+			border-bottom: 3px solid map-get($navColors,underline);
 			height: 64px;
 		}
 	}
 	ul.desktop-navigation li a{
-		color: $light-text;
+		color: map-get($navColors,li-color);
 	}
 	a {
 		img {
@@ -126,7 +141,12 @@ nav {
 		}
 		max-width: 70%;
 	}
+	.button-collape{
+		color: map-get($navColors,li-color);
+	}
 }
+
+/* Sidenav, for docs page and on mobile */
 .side-nav, .side-nav.fixed{
 	.collapsible-header{
 		font-weight:bold;
@@ -178,13 +198,7 @@ nav {
 	}
 }
 
-/*nav ul.desktop-navigation li:hover a {
-border-bottom:3px solid rgba(255,255,255,0.5);
-padding:16px 20px 7px 20px;
-line-height:32px;
-margin-bottom: 6px;
-}*/
-
+/* custom style for index.html */
 .top-div {
 	.valign-wrapper {
 		min-height: 350px;
@@ -229,77 +243,29 @@ margin-bottom: 6px;
 	}
 }
 
-.fade-ins {
-	opacity: 0;
-}
 
-.mce_inline_error {
-	background-color: transparent !important;
-}
-
-.nxt-div {
-	padding: 75px 0;
-	margin: -20px;
-}
-
-.wallet-div {
-	padding: 25px 0;
-}
-
-@-webkit-keyframes pulsate {
+/* pulsing css animation and it's class */
+@include keyframes(puslate){
 	0% {
-		-webkit-transform: scale(0.1);
+		@include scale(0.1);
 	}
 
 	50% {
-		-webkit-transform: scale(1);
+		@include scale(1);
 	}
 
 	100% {
-		-webkit-transform: scale(0.5);
-	}
-}
-
-
-@keyframes pulsate {
-	0% {
-		transform: scale(0.1);
-	}
-
-	50% {
-		transform: scale(1);
-	}
-
-	100% {
-		transform: scale(0.5);
-	}
-}
-
-
-@-moz-keyframes pulsate {
-	0% {
-		-moz-transform: scale(0.1);
-	}
-
-	50% {
-		-moz-transform: scale(1);
-	}
-
-	100% {
-		-moz-transform: scale(0.5);
+		@include scale(0.1);
 	}
 }
 
 
 .pulsate {
-	-webkit-animation: pulsate 2s infinite linear;
-	-moz-animation: pulsate 2s infinite linear;
-	-ms-animation: pulsate 2s infinite linear;
-	animation: pulsate 2s infinite linear;
+	@include animation('pulsate 2s infinite');
 }
 
-/* Docs menu */
 
+/* Docs menu */
 footer.docs-footer{
 	padding-left: 240px;
 }
@@ -315,18 +281,5 @@ footer.docs-footer{
 	#docs-content{
 		padding: 5px;
 		padding-left: 5px;
-	}
-}
-
-a.site-title {
-	font-size: 24px;
-	padding-left: 6px;
-}
-
-/* indigo ripple */
-
-.waves-effect{
-	.waves-ripple {
-		background-color: rgba($accent-base, 0.70);
 	}
 }

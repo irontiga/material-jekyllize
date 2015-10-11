@@ -5,11 +5,11 @@ permalink: /team/
 group: "nav"
 ---
 
-<h3 class='blue-grey-text'>Team</h3>
+###Team
 
 <hr>
 
-<div class='row blue-grey-text'>
+<div class='row'>
 	<div class='col s12 m4 l4 center'>
 		<h5>irontiga</h5>
 		<h6>Website / UI dev</h6>
