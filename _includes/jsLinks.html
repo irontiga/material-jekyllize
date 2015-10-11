@@ -11,6 +11,12 @@
 		$('.materialboxed').materialbox();
 		$('.button-collapse').sideNav({closeOnClick: true});
 		$("#preloader").fadeOut(600).hide();
+		$("#docs-anchor").width( ( $("#docs-item-content").width() / 3 ) );
+		$('#docs-anchor').pushpin({
+			top: $("#docs-item-content").offset().top,
+			offset: 64,
+			bottom: $(".footer").height()
+		});
 	});
 	
 	
