@@ -20,7 +20,7 @@ $linkColor	: map-get($accent, darken-1);
 $navColors: (
 	"background"	: $primary-base,
 	"underline"		: $accent-base,
-	"li-color"		: $light-text
+	"li-color"		: map-get($primary, lighten-4)
 );
 
 /* Create all the classes for primary and accent just like $blue or $yellow */
@@ -146,7 +146,7 @@ nav {
 	}
 }
 
-/* Sidenav, for docs page and on mobile */
+/* Sidenav, for docs page defaults and on mobile */
 .side-nav, .side-nav.fixed{
 	.collapsible-header{
 		font-weight:bold;
@@ -202,7 +202,7 @@ nav {
 /* Docs page sidebar */
 .side-nav.fixed{
 	padding-top:12px;
-	background: map-get($primary,lighten-5);
+	background: map-get($accent,lighten-5);
 	
 	/* remove the ripple */
 	.waves-effect .waves-ripple{
@@ -215,9 +215,9 @@ nav {
 		font-weight: 500;
 		&.active{
 			background-color: transparent;
-			color: map-get($primary,darken-2) !important;
+			color: map-get($accent,darken-2) !important;
 		}
-		color: map-get($primary,lighten-1)
+		color: map-get($accent,lighten-1)
 	}
 	.collapsible-body{
 		padding-left:15px;
@@ -228,15 +228,15 @@ nav {
 			background-color: transparent;
 			a{
 				line-height:30px;
-				color: map-get($primary,lighten-2);
+				color: map-get($accent,lighten-2);
 			}
 			&.active, &:hover{
 				background-color: transparent;
 				a{
-					color: map-get($primary,darken-2);
+					color: map-get($accent,darken-2);
 				}
 				> a{
-					color: map-get($primary,darken-2);
+					color: map-get($accent,darken-2);
 				}
 			}
 		}
@@ -250,7 +250,7 @@ nav {
 		&.active{
 			background-color: transparent;
 			> a{
-				color:$light-text;
+				color: map-get($accent,lighten-2);
 			}
 		}
 	}
