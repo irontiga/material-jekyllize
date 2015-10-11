@@ -14,7 +14,10 @@
 				<ul class="collapsible" data-collapsible="accordion">
 					<li>
 						<div class="collapsible-header waves-effect {% if page.url contains subgroup.group %} active {% endif %}">
-							{{subgroup.title}}<i class="mdi-navigation-arrow-drop-down"></i>
+							{{subgroup.title}}
+							{% if navType != 'docs' %}
+								<i class="mdi-navigation-arrow-drop-down"></i>
+							{% endif %}
 						</div>
 						<div class="collapsible-body">
 							<ul>

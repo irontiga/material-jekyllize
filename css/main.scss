@@ -7,8 +7,8 @@
 @import "syntax-highlighting";
 
 /* Color scheme */
-$primary	: $brown;
-$accent		: $yellow;
+$primary	: $indigo;
+$accent		: $pink;
 /* New variables to reduce map-get calls, don't touch this unless you want to change the base shade */
 $primary-base	:map-get($primary, base);
 $accent-base	:map-get($accent, base);
@@ -160,6 +160,7 @@ nav {
 	}
 	.collapsible-body{
 		margin:0;
+		padding-left:10px;
 		li{
 			a{
 				margin:0;
@@ -194,6 +195,63 @@ nav {
 			line-height:50px;
 			height:50px;
 			margin:0;
+		}
+	}
+}
+
+/* Docs page sidebar */
+.side-nav.fixed{
+	padding-top:12px;
+	background: map-get($primary,lighten-5);
+	
+	/* remove the ripple */
+	.waves-effect .waves-ripple{
+		background-color:transparent;
+	}
+	.collapsible-header{
+		line-height:30px;
+		min-height:30px;
+		background-color: transparent;
+		font-weight: 500;
+		&.active{
+			background-color: transparent;
+			color: map-get($primary,darken-2) !important;
+		}
+		color: map-get($primary,lighten-1)
+	}
+	.collapsible-body{
+		padding-left:15px;
+		background-color: transparent;
+		li{
+			line-height:30px;
+			height:30px;
+			background-color: transparent;
+			a{
+				line-height:30px;
+				color: map-get($primary,lighten-2);
+			}
+			&.active, &:hover{
+				background-color: transparent;
+				a{
+					color: map-get($primary,darken-2);
+				}
+				> a{
+					color: map-get($primary,darken-2);
+				}
+			}
+		}
+	}
+	li{
+		line-height:30px;
+		background-color: transparent;
+		&:hover{
+			background-color: transparent;
+		}
+		&.active{
+			background-color: transparent;
+			> a{
+				color:$light-text;
+			}
 		}
 	}
 }
@@ -273,6 +331,13 @@ footer.docs-footer{
 	padding: 10px;
 	padding-left: 250px;
 }
+#docs-header{
+	padding:20px;
+	padding-left: 280px;
+	background-color: $accent-base;
+	color: map-get($accent, lighten-4);
+	font-size:40px;
+}
 
 @media only screen and (max-width: 992px) {
 	footer.docs-footer{
@@ -281,5 +346,8 @@ footer.docs-footer{
 	#docs-content{
 		padding: 5px;
 		padding-left: 5px;
+	}
+	#docs-header{
+		padding-left: 40px;
 	}
 }
