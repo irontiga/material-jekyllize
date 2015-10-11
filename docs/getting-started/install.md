@@ -8,3 +8,5 @@ group: "getting-started"
 # Installation
 
 Step 1:
+
+<a class="btn waves-effect">Download Jekyllize</a>

@@ -6,10 +6,17 @@
 @import "syntax-highlighting";
 
 /* Color scheme */
-$primary : $brown;
-$accent: $deep-orange;
-$dark-text: map-get($blue-grey, darken-2);
-$light-text: #FFF;
+$primary	: $brown;
+$accent		: $yellow;
+
+/* Advanced colors */
+$dark-text	: #444;
+$light-text	: #FFF;
+$linkColor	: map-get($accent, darken-1);
+
+/* New variables to reduce map-get calls, don't touch this unless you want to change the base shade */
+$primary-base	:map-get($primary, base);
+$accent-base	:map-get($accent, base);
 
 html {
 	overflow-x: hidden;
@@ -62,11 +69,21 @@ pre{
 	}
 }
 a{
-	color:map-get($accent, base);
+	color:$linkColor;
 	text-decoration: bold;
 	&:hover{
-		color:map-get($accent, lighten-2);
+		color:lighten($linkColor,15%);
 	}
+}
+.btn{
+	background-color: $primary-base;
+}
+.btn:hover{
+	color:$light-text;
+	background-color: map-get($primary,lighten-1);
+}
+nav{
+	background-color: $primary-base;
 }
 #preloader {
 	position: fixed;
@@ -85,7 +102,7 @@ a{
 }
 
 blockquote {
-	border-color: map-get($accent,base);
+	border-color: $accent-base;
 }
 
 nav {
@@ -94,12 +111,12 @@ nav {
 			background: transparent;
 		}
 		&.active {
-			border-bottom: 3px solid map-get($primary,base);
+			border-bottom: 3px solid $accent-base;
 			height: 64px;
 		}
 	}
 	ul.desktop-navigation li a{
-		color: $dark-text;
+		color: $light-text;
 	}
 	a {
 		img {
@@ -130,7 +147,7 @@ nav {
 				color:$dark-text;
 			}
 			&.active{
-				background-color: map-get($primary,base);
+				background-color: $primary-base;
 				a{
 					color:$dark-text;
 				}
@@ -148,7 +165,7 @@ nav {
 			background-color: inherit;
 		}
 		&.active{
-			background-color: map-get($primary,base);
+			background-color: $primary-base;
 			> a{
 				color:$light-text;
 			}
@@ -310,6 +327,6 @@ a.site-title {
 
 .waves-effect{
 	.waves-ripple {
-		background-color: rgba(map-get($accent,base), 0.65);
+		background-color: rgba($accent-base, 0.70);
 	}
 }

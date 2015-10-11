@@ -16,6 +16,6 @@ $accent: $pink;
 
 {% endhighlight %}
 
-The available colors can be found [here](http://materializecss.com/color.html), although `black` and `white` can't be used
+The available colors can be found [here](http://materializecss.com/color.html), although `$black` and `$white` can't be used
 
 #### Modifying main.scss
