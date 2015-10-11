@@ -13,7 +13,7 @@
 		$("#preloader").fadeOut(600).hide();
 		$("#docs-anchor").width( ( $("#docs-item-content").width() / 3 ) );
 		$('#docs-anchor').pushpin({
-			top: $("#docs-item-content").offset().top,
+			top: 124,
 			offset: 64,
 			bottom: $(".footer").height()
 		});
@@ -32,10 +32,16 @@
 				accordion : true
 			});
 			$('.button-collapse').sideNav({closeOnClick: true});
+			$('#docs-anchor').pushpin({
+				top: 124,
+				offset: 64,
+				bottom: $(".footer").height()
+			});
 			
 			
 			// Ditch loader and show page
 			$("#preloader").hide();
+			
 		});
 	}
 	// Link click
