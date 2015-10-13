@@ -6,16 +6,33 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}/js/materialize.min.js"></script>
 <script type="text/javascript">
-	//custom JS code
-	$(document).ready(function(){
-		$('.materialboxed').materialbox();
-		$('.button-collapse').sideNav({closeOnClick: true});
-		$("#preloader").fadeOut(600).hide();
+	
+	
+	function sizes(){
 		$("#docs-anchor").width( ( $("#docs-item-content").width() / 3 ) );
+	}
+	
+	function materialInit(){
+		//init materialize stuff
+		$('.button-collapse').sideNav({closeOnClick: true});
 		$('#docs-anchor').pushpin({
 			top: 124,
 			offset: 64
 		});
+		$('.collapsible').collapsible({
+			accordion : true
+		});
+		// Set element sizes
+		sizes();
+	};
+	
+	$(document).ready(function(){
+		materialInit();
+		$("#preloader").fadeOut(600).hide();
+	});
+	
+	$(window).resize(function(){
+		sizes();
 	});
 	
 	
@@ -27,15 +44,7 @@
 		$('#page-body').load(href + " #page-body-inner", function(){
 
 			// Re activate plugins
-			$('.collapsible').collapsible({
-				accordion : true
-			});
-			$('.button-collapse').sideNav({closeOnClick: true});
-			$('#docs-anchor').pushpin({
-				top: 124,
-				offset: 64
-			});
-			
+			materialInit()
 			
 			// Ditch loader and show page
 			$("#preloader").hide();
@@ -61,7 +70,10 @@
 	
 	// Browser back button
 	window.onpopstate = function(e){
-		changePage("http://irontiga.com" + location.pathname)
+		if (e.srcElement.location.pathname == e.target.location.pathname){
+			return
+		};
+		changePage("http://irontiga.com" + location.pathname);
 	};
 	
 </script>
