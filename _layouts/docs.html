@@ -21,7 +21,11 @@
 				<li><a>Link</a></li>
 				<li><a>Link</a></li>
 				{% for anchor in page.anchors %}
-					<li><a href="{{ anchor.url }}">{{ anchor.title }}</a></li>
+					{% if anchor.divider == true %}
+						<li class="divider"></li>
+					{% else %}
+						<li><a href="{{ anchor.url }}">{{ anchor.title }}</a></li>
+					{% endif %}
 				{% endfor %}
 			</ul>
 		</div>

@@ -4,6 +4,7 @@ layout: docs
 permalink: docs/api/sass/
 group: "api"
 anchors:
+  - divider: true
   - title: "How to"
     url: "#h1"
   - title: "Drop"

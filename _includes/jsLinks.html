@@ -70,9 +70,6 @@
 	
 	// Browser back button
 	window.onpopstate = function(e){
-		if (e.srcElement.location.pathname == e.target.location.pathname){
-			return
-		};
 		changePage("http://irontiga.com" + location.pathname);
 	};
 	
