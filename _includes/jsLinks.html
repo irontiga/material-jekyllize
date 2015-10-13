@@ -37,6 +37,11 @@
 	
 	
 	// Page changing
+	function getLocation() {
+		return location.pathname + location.search;
+	}
+
+	var currentLocation = getLocation();
 	
 	//Function
 	function changePage(href){
@@ -50,6 +55,7 @@
 			$("#preloader").hide();
 			
 		});
+		currentLocation = getLocation();
 	}
 	// Link click
 	$(document).on("click", ".internal-link", function(e){
@@ -70,7 +76,10 @@
 	
 	// Browser back button
 	window.onpopstate = function(e){
-		changePage("http://irontiga.com" + location.pathname);
+		var newLocation = getLocation();
+		if(newLocation != currentLocation) {
+			changePage("http://irontiga.com" + location.pathname);
+		}
 	};
 	
 </script>
