@@ -12,11 +12,11 @@
 		{{ page.title }}
 	</div>
 	<div id="docs-content" class="row">
-		<div class="col s12 {% if page.anchors %} m9 {% else %} m12 {% endif %}" id="docs-item-content">
+		<div class="col m12 {% if page.sidebar == 'fixed' %} l9 {% endif %}" id="docs-item-content">
 			{{ content }}
 		</div>
-		{% if page.anchors %}
-		<div class="hide-on-small-only" id="docs-anchor">
+		{% if page.sidebar == 'fixed' %}
+		<div class="hide-on-med-and-down" id="docs-anchor">
 			<ul class="card-panel white accent-text">
 				<li><a>Link</a></li>
 				<li><a>Link</a></li>

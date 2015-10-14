@@ -101,7 +101,16 @@ blockquote {
 		background-color: rgba($accent-base, 0.70);
 	}
 }
-
+h1 i.material-icons{
+	font-size:64px;
+}
+.row{
+	margin-bottom:0;
+	padding-bottom:20px;
+}
+footer.page-footer{
+	margin-top:0;
+}
 /* Preloader positioning */
 #preloader {
 	position: fixed;
@@ -228,9 +237,11 @@ nav {
 			background-color: transparent;
 			a{
 				line-height:30px;
+				height:30px;
 				color: map-get($primary,lighten-2);
 			}
 			&.active, &:hover{
+				border-left:3px solid $accent-base;
 				background-color: transparent;
 				a{
 					color: map-get($primary,darken-2);
@@ -260,7 +271,7 @@ nav {
 .top-div {
 	.valign-wrapper {
 		min-height: 350px;
-		height: 100vh;
+		height: 90vh;
 	}
 	h1 {
 		padding: 50px 0 50px 0;
