@@ -6,6 +6,10 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 	
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Roboto and Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,500,700|Roboto:300,400,500,700&display=swap"
+        rel="stylesheet">
+
 	<link type="text/css" rel="stylesheet" href="{{ site.baseurl }}/css/main.css"  media="screen,projection"/>
 </head>

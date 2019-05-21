@@ -9,25 +9,34 @@
 
 		<header class="site-header">
 			<div class='navbar-fixed'>
-				<nav>
-					<div class="nav-wrapper">
-						<div class='container'>
-							<a href="{{site.baseurl}}/" class="internal-link brand-logo primary-text text-lighten-3 thin">
-								<!-- <img src='{{ site.baseurl }}/img/logo.png'> -->
-								Jekyllize
-							</a>
-							<a data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-							<ul class="right hide-on-med-and-down desktop-navigation">
-								{% assign navType = 'desktop' %}
-								{% include nav.html %}
-							</ul>
-						</div>
-						<ul class="side-nav" id="mobile-demo">
-							{% assign navType = 'mobile' %}
-							{% include nav.html %}
-						</ul>
-					</div>
-				</nav>
+                <!-- NEW -->
+                <nav>
+                    <div class="nav-wrapper">
+                        <div class='container'>
+                            <a href="{{site.baseurl}}/" class="internal-link mono brand-logo primary-text text-lighten-3 thin">
+                                <!-- <img src='{{ site.baseurl }}/img/logo.png'> -->
+                                Jekyllize
+                            </a>
+                            <!-- <a data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> -->
+                            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                            <ul class="right hide-on-med-and-down desktop-navigation mono">
+                                {% assign navType = 'desktop' %}
+                                {% include nav.html %}
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>
+                
+                <ul id="slide-out" class="sidenav">
+                    {% assign navType = 'mobile' %}
+                    {% include nav.html %}
+                </ul>
+                <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                
+
+                <!-- OLD -->
+
 			</div>
 		</header>
 		<main>

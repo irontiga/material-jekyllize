@@ -10,10 +10,10 @@
 	
 	{% if include.group.subgroups %}
 		<li class="no-padding">
-			<ul class="collapsible" data-collapsible="accordion">
+			<ul class="collapsible" dataaaa-collapsible="accordion">
 				{% for subgroup in include.group.subgroups %}
-					<li>
-						<div class="collapsible-header waves-effect {% if page.url contains subgroup.group %} active {% endif %}">
+					<li class="{% if page.url contains subgroup.group %} active {% endif %}">
+						<div class="collapsible-header waves-effect mono">
 							{{subgroup.title}}
 							{% if navType != 'docs' %}
 								<i class="mdi-navigation-arrow-drop-down"></i>

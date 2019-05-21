@@ -7,19 +7,23 @@
 @import "syntax-highlighting";
 
 /* Color scheme */
-$primary	: $indigo;
-$accent		: $pink;
+$primary	: $grey;
+$accent		: $cyan;
 /* New variables to reduce map-get calls, don't touch this unless you want to change the base shade */
-$primary-base	:map-get($primary, base);
-$accent-base	:map-get($accent, base);
+// $primary-base	:map-get($primary, base);
+$primary-base	:map-get($primary, darken-3);
+// $accent-base	:map-get($accent, base);
+$accent-base	:map-get($accent, darken-2);
 
 /* Advanced colors */
 $dark-text	: #444;
 $light-text	: #FFF;
-$linkColor	: map-get($accent, darken-1);
+$linkColor	: map-get($accent, darken-2);
 $navColors: (
-	"background"	: $primary-base,
-	"underline"		: $accent-base,
+	// "background"	: $primary-base,
+	"background"	: map-get($primary, darken-3),
+	// "underline"		: $accent-base,
+	"underline"		: map-get($accent, darken-2),
 	"li-color"		: map-get($primary, lighten-4)
 );
 
@@ -54,6 +58,9 @@ $custom_colors: (
 }
 .light-text{
 	color:$light-text !important;
+}
+.mono {
+    font-family: "Roboto Mono", monospace;
 }
 /* Customize standard html */
 html {
@@ -95,6 +102,11 @@ blockquote {
 .btn:hover{
 	color:$light-text;
 	background-color: map-get($primary,lighten-1);
+}
+.btn-flat {
+    &:hover {
+        background-color: map-get($accent, lighten-4) !important;
+    }
 }
 .waves-effect{
 	.waves-ripple {
@@ -150,13 +162,16 @@ nav {
 		}
 		max-width: 70%;
 	}
-	.button-collape{
+	.button-collape {
+		color: map-get($navColors,li-color);
+    }
+    .sidenav-trigger {
 		color: map-get($navColors,li-color);
 	}
 }
 
 /* Sidenav, for docs page defaults and on mobile */
-.side-nav, .side-nav.fixed{
+.sidenav, .sidenav.sidenav-fixed{
 	.collapsible-header{
 		font-weight:bold;
 		max-width:100%;
@@ -185,7 +200,19 @@ nav {
 					color:$light-text;
 				}
 			}
-		}
+        }
+        >ul {
+            &:not(.collapsible){
+                >li {
+                    &.active {
+                        background-color: transparent;
+                        a {
+                            color: $dark-text;
+                        }
+                    }
+                }
+            }
+        }
 	}
 	li{
 		line-height:50px;
@@ -209,7 +236,7 @@ nav {
 }
 
 /* Docs page sidebar */
-.side-nav.fixed{
+.sidenav.sidenav-fixed{
 	padding-top:12px;
 	background: map-get($primary,lighten-5);
 	
@@ -222,11 +249,12 @@ nav {
 		min-height:30px;
 		background-color: transparent;
 		font-weight: 500;
+        // color: map-get($primary,lighten-1)
+        color: $dark-text;
 		&.active{
 			background-color: transparent;
 			color: map-get($primary,darken-2) !important;
 		}
-		color: map-get($primary,lighten-1)
 	}
 	.collapsible-body{
 		padding-left:15px;
@@ -238,7 +266,8 @@ nav {
 			a{
 				line-height:30px;
 				height:30px;
-				color: map-get($primary,lighten-2);
+                // color: map-get($primary,lighten-2);
+                color: $dark-text;
 			}
 			&.active, &:hover{
 				border-left:3px solid $accent-base;
@@ -252,7 +281,7 @@ nav {
 			}
 		}
 	}
-	li{
+	li {
 		line-height:30px;
 		background-color: transparent;
 		&:hover{
@@ -346,12 +375,14 @@ footer.docs-footer{
 }
 #docs-content{
 	padding: 10px;
-	padding-left: 250px;
+	// padding-left: 250px;
+	padding-left: 300px;
 	padding-right:0;
 }
 #docs-header{
 	padding:20px;
-	padding-left: 280px;
+	// padding-left: 280px;
+	padding-left: 330px;
 	background-color: $accent-base;
 	color: map-get($accent, lighten-4);
 	font-size:40px;
